@@ -22,14 +22,24 @@
                 margin:3% 3%; 
                 box-shadow:4px 4px 4px #E9E9E9;
             }
+            #imgBody
+            {
+                margin-top:2%;
+            }
 
         </style>
 
+
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+        
     </head>
     <body>
         
@@ -52,9 +62,33 @@
                 </li>
             </ul>
 
-            <img src="{{ asset('storage/imgHome/image.jpg') }}" class="img-fluid" style="margin-top:2%">
+            <img id="imgBody" src="{{ asset('storage/imgHome/image.jpg') }}" class="img-fluid">
 
-            <li style="color:#F0718E; font-size:30px; margin-top:2%" >Products </li>
+            <div style="width: 30%; position: absolute; z-index: 8">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel", style="position:relative; background-color:#E9E9E9; text-align: center">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt
+                             provident ipsum in adipisci nesciunt laborum officia expedita, facilis fugit, 
+                             sed, alias labore doloremque recusandae debitis numquam dolores dolorem culpa.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni numquam totam nam, nulla maiores accusantium veniam fuga corporis itaque temporibus? Delectus consequuntur nihil ducimus dicta qui provident inventore dolore natus.</p>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            
+
+            <li style="color:#F0718E; font-size:30px; margin-top:4%" >Products </li>
 
             <!-- se valida si entro en el link de productos y se recorren los productos de la base de datos -->
             @if (!empty($productos))
